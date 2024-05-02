@@ -2,7 +2,8 @@
 let grid = document.getElementById("my-grid");
 let play = document.getElementById("play");
 let diff;
-
+let punt = document.getElementById("punteggio");
+let score = 0;
 let contBomb =[];
 
 //FUNZIONE PER DAR INIZIO AL CICLO DELLA CREAZIONE DELLA GRIGLIA
@@ -64,12 +65,16 @@ function createSquare(y){
     //  square.innerHTML = y;
     square.addEventListener("click",function(){
         if(contBomb.includes(y)){
-            square.innerHTML += ` ${y} è una bomba`;
-            square.classList.toggle("selected");
+            let lose = callback();
+            square.innerHTML += ` ${y} è una bomba,YOU LOSE`;
+            square.classList.toggle("bomb");
             square.classList.remove("bg-square")
+            punt.innerHTML = `YOU LOSE` 
         }else{
             square.innerHTML += `il numero della cella è ${y}`;
             square.classList.toggle("selected");
+            score++;
+            punt.innerHTML = score;
         }
     },{once:true})
    
@@ -125,3 +130,5 @@ function generateBomb(){
     }
     
 }
+
+ 

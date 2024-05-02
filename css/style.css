@@ -1,6 +1,7 @@
 
 .bomb{
-    background-color: rgb(221, 13, 240);
+    background-color: rgb(255, 0, 0);
+    
 }
 .base-square{
     border: 1px solid red;
