@@ -10,6 +10,7 @@ let contBomb =[];
 function start(){
     grid.innerHTML ="";
     diff = document.getElementById("difficult").value;
+    contBomb =[];
     generateBomb() 
 
     if( diff == "easy"){
@@ -40,7 +41,7 @@ function start(){
             // }
         }  
     }
-}
+}// ***** GLI "IF" COMMENTATI SONO UN ALTERNATIVA
 
 // ***************FUNZIONE PER LA CREAZIONE DEI QUADRATI DELLA GRIGLIA
 function createSquare(y){
@@ -84,26 +85,43 @@ play.addEventListener("click", start)
 
 /// generazione bombe
 function generateBomb(){
-    // let diff = document.getElementById("difficult").value;
+     let diff = document.getElementById("difficult").value;
     if (diff == "easy"){
 
-        for (let x = 0; x <= 5; x++){
+        for (let x = 1; x <= 16; x++){
             let bomb = Math.floor(Math.random() * (100 - 1) + 1);
+            if(contBomb.includes(bomb)){
+                bomb = Math.floor(bomb + 2.7);
+                contBomb.push(bomb)
+            } else{
+                contBomb.push(bomb)
+            }
             
-            contBomb.push(bomb)
         }
-    } else if( diff == "medium"){
-        for (let x = 0; x <= 5; x++){
-            let bomb = Math.floor(Math.random() * (81 - 1) + 1);
+        } else if( diff == "medium"){
+        for (let x = 1; x <= 16; x++){
+             let bomb = Math.floor(Math.random() * (81 - 1) + 1);
             
-            contBomb.push(bomb)
-        }
-    }else if( diff == "hard"){
-        for (let x = 0; x <= 5; x++){
-            let bomb = Math.floor(Math.random() * (49 - 1) + 1);
+             if(contBomb.includes(bomb)){
+                bomb = Math.floor(bomb + 2.7);
+                contBomb.push(bomb)
+            } else{
+                contBomb.push(bomb)
+            }
             
-            contBomb.push(bomb)
-        }
+         }
+        }else if( diff == "hard"){
+        for (let x = 1; x <= 16; x++){
+             let bomb = Math.floor(Math.random() * (49 - 1) + 1);
+            
+             if(contBomb.includes(bomb)){
+                bomb = Math.floor(bomb + 2.7);
+                contBomb.push(bomb)
+            } else{
+                contBomb.push(bomb)
+            }
+            
+         }
     }
     
 }
