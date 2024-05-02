@@ -1,6 +1,8 @@
 
 .bomb{
     background-color: rgb(255, 0, 0);
+    text-align: center;
+    padding: 1.5rem;
     
 }
 .base-square{
@@ -16,7 +18,8 @@
     color: black;
 }
 .base-square7{
-    border: 1px solid red;
+    border-radius: 30px;
+    border: 1px solid rgb(8, 81, 236);
     width: calc(100% / 7);
     height: 129px;
     color: black;
@@ -27,8 +30,10 @@
 }
 
 .selected{
-    opacity: 0.5;
+    background-color: aqua;
+    text-align: center;
+    padding: 1.5rem;
 }
-.lose{
+.stop{
     pointer-events: none;
 }

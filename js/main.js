@@ -9,7 +9,7 @@ let contBomb =[];
 //FUNZIONE PER DAR INIZIO AL CICLO DELLA CREAZIONE DELLA GRIGLIA
 
 function start(){
-    grid.classList.remove("lose")
+    grid.classList.remove("stop")
     grid.innerHTML ="";
     diff = document.getElementById("difficult").value;
     contBomb =[];
@@ -23,6 +23,7 @@ function start(){
             //      grid.append(gridCreations)
             //      gridCreations.classList.add("bomb")
             // }
+            
         }
     } else if( diff == "medium"){ 
         for (let x = 1; x <= 81; x++) {
@@ -32,6 +33,7 @@ function start(){
             //     grid.append(gridCreations)
             //     gridCreations.classList.add("bomb")
             // }
+           
         }       
     } else if( diff == "hard"){
         for (let x = 1; x <= 49; x++) {
@@ -40,10 +42,13 @@ function start(){
             // if(contBomb.includes(x)){
             //     grid.append(gridCreations)
             //     gridCreations.classList.add("bomb")
-            // }
+            // } 
+         
+           
         }  
     }
-}// ***** GLI "IF" COMMENTATI SONO UN ALTERNATIVA
+}
+// ***** GLI "IF" COMMENTATI SONO UN ALTERNATIVA
 
 // ***************FUNZIONE PER LA CREAZIONE DEI QUADRATI DELLA GRIGLIA
 function createSquare(y){
@@ -65,19 +70,17 @@ function createSquare(y){
 
     //  square.innerHTML = y;
     square.addEventListener("click", function star(){
-        
-
         if(contBomb.includes(y)){
             let lose = "YOU LOSE" ;
             square.innerHTML += ` ${y} è una bomba,YOU LOSE`;
             square.classList.toggle("bomb");
             square.classList.remove("bg-square")
             punt.innerHTML = `YOU LOSE, ur SCORE IS ${score}`;
-            grid.classList.add("lose")
+            grid.classList.add("stop")
                       
                 
                 
-        }else {
+        }else if(contBomb.includes(y)== false){
             square.innerHTML += `il numero della cella è ${y}`;
             square.classList.toggle("selected");
             score++;
@@ -140,15 +143,3 @@ function generateBomb(){
     
 }
 
-// function BloccaMouse()
-// {
-//     if (window.event.button == 1 && window.event.button == 2)
-//     {
-//         alert("Il tasto sinistro del mouse è bloccato!");
-//         function star().remove;
-//     }
-//     else
-//     {
-//         alert("Il tasto destro del mouse è bloccato!");
-//     }
-// }
