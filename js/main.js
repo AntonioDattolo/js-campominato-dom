@@ -4,6 +4,7 @@ let play = document.getElementById("play");
 let diff;
 let punt = document.getElementById("punteggio");
 let score = 0;
+let blockLose = document.querySelector("section");
 let contBomb =[];
 
 //FUNZIONE PER DAR INIZIO AL CICLO DELLA CREAZIONE DELLA GRIGLIA
@@ -63,19 +64,27 @@ function createSquare(y){
     }        
 
     //  square.innerHTML = y;
-    square.addEventListener("click",function(){
+    square.addEventListener("click", function star(){
+        
+
         if(contBomb.includes(y)){
-            let lose = callback();
+            let lose = "YOU LOSE" ;
             square.innerHTML += ` ${y} è una bomba,YOU LOSE`;
             square.classList.toggle("bomb");
             square.classList.remove("bg-square")
-            punt.innerHTML = `YOU LOSE` 
-        }else{
+            punt.innerHTML = `YOU LOSE, ur SCORE IS ${score}`;
+            blockLose.classList.add("lose")
+                      
+                
+                
+        }else {
             square.innerHTML += `il numero della cella è ${y}`;
             square.classList.toggle("selected");
             score++;
             punt.innerHTML = score;
+                
         }
+        
     },{once:true})
    
     return square   
@@ -131,4 +140,15 @@ function generateBomb(){
     
 }
 
- 
+// function BloccaMouse()
+// {
+//     if (window.event.button == 1 && window.event.button == 2)
+//     {
+//         alert("Il tasto sinistro del mouse è bloccato!");
+//         function star().remove;
+//     }
+//     else
+//     {
+//         alert("Il tasto destro del mouse è bloccato!");
+//     }
+// }

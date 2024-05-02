@@ -29,3 +29,6 @@
 .selected{
     opacity: 0.5;
 }
+.lose{
+    pointer-events: none;
+}
