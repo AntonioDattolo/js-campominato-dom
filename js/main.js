@@ -4,12 +4,12 @@ let play = document.getElementById("play");
 let diff;
 let punt = document.getElementById("punteggio");
 let score = 0;
-let blockLose = document.querySelector("section");
 let contBomb =[];
 
 //FUNZIONE PER DAR INIZIO AL CICLO DELLA CREAZIONE DELLA GRIGLIA
 
 function start(){
+    grid.classList.remove("lose")
     grid.innerHTML ="";
     diff = document.getElementById("difficult").value;
     contBomb =[];
@@ -73,7 +73,7 @@ function createSquare(y){
             square.classList.toggle("bomb");
             square.classList.remove("bg-square")
             punt.innerHTML = `YOU LOSE, ur SCORE IS ${score}`;
-            blockLose.classList.add("lose")
+            grid.classList.add("lose")
                       
                 
                 
@@ -123,7 +123,7 @@ function generateBomb(){
                 contBomb.push(bomb)
             }
             
-         }
+        }
         }else if( diff == "hard"){
         for (let x = 1; x <= 16; x++){
              let bomb = Math.floor(Math.random() * (49 - 1) + 1);
@@ -135,7 +135,7 @@ function generateBomb(){
                 contBomb.push(bomb)
             }
             
-         }
+        }
     }
     
 }
