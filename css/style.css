@@ -1,31 +1,37 @@
 
-.bomb{
-    background-color: rgb(255, 0, 0);
-    text-align: center;
-    padding: 1.5rem;
-    
-}
+
 .base-square{
     border: 1px solid red;
     width: calc(100% / 10);  
     height: 129px;
     color: black;
+    border-radius: 30px;
+
 }
 .base-square9{
     border: 1px solid red;
     width: calc(100% / 9);
     height: 129px;
-    color: black;
+    color: whitesmoke;
+    background-color: rgb(51, 51, 168);
+    border-radius: 30px;
+
 }
 .base-square7{
     border-radius: 30px;
     border: 1px solid rgb(8, 81, 236);
     width: calc(100% / 7);
     height: 129px;
-    color: black;
+    color: whitesmoke;
+    background-color: rgb(51, 51, 168);
 }
 
 .bg-square{
+    border-radius: 30px;
+    border: 1px solid rgb(8, 81, 236);
+    width: calc(100% / 7);
+    height: 129px;
+    color: whitesmoke;
     background-color: rgb(51, 51, 168);
 }
 
@@ -36,4 +42,18 @@
 }
 .stop{
     pointer-events: none;
+}
+.bomb{
+    background-color: rgb(255, 0, 0);
+    text-align: center;
+    padding: 1.5rem;
+    
+    border-radius: 30px;
+
+    
+}
+.winner{
+    background-color: green;
+    color: aliceblue;
+    border-radius: 30px;
 }
