@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>CampoMinato</title>
+</head>
+<body>
+    <section class="container">
+        <form class="text-center" name="select-diff">
+
+            <!-- button che mi servirà dopo per la function  -->
+            
+            <input  value="play" class="btn btn-primary col-3" id="play" type="button" ></input>
+            
+            <label class="col-1" for="difficoltà"> Difficult</label>
+
+            <select class="col-3" name="difficoltà" id="difficult">
+                <option value="easy" >EASY</option>
+                <option value="medium" >MEDIUM</option>
+                <option value="hard" >HARD</option> 
+                
+            </select>
+        </form>
+        <div class="my-grid d-flex flex-wrap p-2" id="my-grid">
+
+        </div>
+        <!-- Creazione griglia con js -->
+      
+    </section>
+    <script src="./js/main.js"></script>
+</body>
+</html>

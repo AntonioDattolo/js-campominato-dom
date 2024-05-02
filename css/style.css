@@ -1,0 +1,30 @@
+
+.bomb{
+    background-color: rgb(221, 13, 240);
+}
+.base-square{
+    border: 1px solid red;
+    width: calc(100% / 10);  
+    height: 129px;
+    color: black;
+}
+.base-square9{
+    border: 1px solid red;
+    width: calc(100% / 9);
+    height: 129px;
+    color: black;
+}
+.base-square7{
+    border: 1px solid red;
+    width: calc(100% / 7);
+    height: 129px;
+    color: black;
+}
+
+.bg-square{
+    background-color: rgb(51, 51, 168);
+}
+
+.selected{
+    opacity: 0.5;
+}
