@@ -9,14 +9,14 @@ let contBomb =[];
 //FUNZIONE PER DAR INIZIO AL CICLO DELLA CREAZIONE DELLA GRIGLIA
 
 function start(){
-    grid.classList.remove("stop")
+    grid.classList.remove("stop");;
     grid.innerHTML ="";
     diff = document.getElementById("difficult").value;
     contBomb =[];
-    generateBomb()
+    generateBomb();
     score = 0;
     punt.innerHTML= "";
-    punt.classList.remove("winner")
+    punt.classList.remove("winner");
     
 
     if( diff == "easy"){
@@ -44,16 +44,16 @@ function createSquare(y){
     let square = document.createElement("div");
     if (diff == "easy"){
         square.classList.add("base-square");
-        square.classList.add("bg-square")
+        square.classList.add("bg-square");
     }
     else if (diff == "medium"){
         square.classList.add("base-square9");
-        square.classList.add("bg-square")
+        square.classList.add("bg-square");
     }
     else if (diff == "hard"){
         square.classList.add("base-square7");
-        square.classList.add("bg-square")
-    }        
+        square.classList.add("bg-square");
+    } ;       
 
     
     square.addEventListener("click", function star(){
@@ -64,7 +64,7 @@ function createSquare(y){
             square.classList.toggle("bomb");
             
             punt.innerHTML = `YOU LOSE, ur SCORE IS ${score}`;
-            grid.classList.add("stop")   
+            grid.classList.add("stop") ;  
         }else {
             square.innerHTML += `il numero della cella è ${y}`;
             square.classList.toggle("selected");
@@ -72,29 +72,24 @@ function createSquare(y){
             punt.innerHTML = score;    
         }
         //CICLO WHILE PER CONTROLLO VINCITORE
-        x=0
+        x=0;
         while(x < 100){
-            if(score==2 && diff == "hard" ){
+            if(score==33 && diff == "hard" ){
                 punt.innerHTML = `YOU WIN! UR SCORE IS ${score}`;
                 punt.classList.add("winner");
-                grid.classList.add("stop")
-                
-
+                grid.classList.add("stop");
             }else if(score==65 && diff== "medium"){
                 punt.innerHTML = `YOU WIN! UR SCORE IS ${score}`;
                 punt.classList.add("winner");
-                grid.classList.add("stop")
-                
-                
+                grid.classList.add("stop");
             }else if(score == 84 && diff =="hard"){
                 punt.innerHTML = `YOU WIN! UR SCORE IS ${score}`;
                 punt.classList.add("winner");
-                grid.classList.add("stop")
-                
+                grid.classList.add("stop");
             }
-            x++
+            x++;
         }
-    },{once:true})
+    },{once:true});
       
     return square 
 }
@@ -110,9 +105,9 @@ function generateBomb(){
             let bomb = Math.floor(Math.random() * (100 - 1) + 1);
             if(contBomb.includes(bomb)){
                 bomb = Math.floor(bomb + 2.7);
-                contBomb.push(bomb)
+                contBomb.push(bomb);
             } else{
-                contBomb.push(bomb)
+                contBomb.push(bomb);
             }
             
         }
@@ -122,9 +117,9 @@ function generateBomb(){
             
              if(contBomb.includes(bomb)){
                 bomb = Math.floor(bomb + 2.7);
-                contBomb.push(bomb)
+                contBomb.push(bomb);
             } else{
-                contBomb.push(bomb)
+                contBomb.push(bomb);
             }
             
         }
@@ -134,13 +129,12 @@ function generateBomb(){
             
              if(contBomb.includes(bomb)){
                 bomb = Math.floor(bomb + 2.7);
-                contBomb.push(bomb)
+                contBomb.push(bomb);
             } else{
-                contBomb.push(bomb)
+                contBomb.push(bomb);
             }
             
         }
     }
     
 }
-
